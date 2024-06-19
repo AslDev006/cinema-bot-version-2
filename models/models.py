@@ -27,7 +27,7 @@ class VideoModels(models.Model):
     year = models.DateField()
     language = models.CharField(max_length=255)
     duration = models.DurationField(default=timedelta(minutes=20))
-    age_limit = models.IntegerField(max_length=2)
+    age_limit = models.CharField(max_length=2, default='00')
     photo_file_id = models.CharField(max_length=255, null=True, blank=True)
     video_file_id = models.CharField(max_length=255)
     create_time = models.DateTimeField(auto_now_add=True)
