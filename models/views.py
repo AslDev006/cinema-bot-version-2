@@ -148,15 +148,6 @@ class InvitedListView(APIView):
         return Response(serializer.errors,
                         status=status.HTTP_400_BAD_REQUEST)
 
-class InvitedDetailView(APIView):
-    permission_classes = [permissions.AllowAny]
-
-    def get(self, request, pk=None, format=None) -> Response:
-        post = get_object_or_404(InvitedModels.objects.all(), pk=pk)
-        serializer = InvitedSerializer(post)
-        return Response(serializer.data,
-                        status=status.HTTP_200_OK)
-
 
 
 class InvitedDetailView(APIView):
